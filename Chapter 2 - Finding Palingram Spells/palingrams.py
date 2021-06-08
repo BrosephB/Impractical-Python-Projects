@@ -14,4 +14,5 @@ for word in wordList:
         paliList += word
         print("Palindrome found: {}".format(word))
 print("Number of Palindromes found: {}".format(len(paliList)))
+input("Press enter to exit the program")
         
