@@ -1,18 +1,36 @@
 """
-based on a dictionary list of words, this program will find palindromes
+Palingrams.py - Finds all word-pair palingrams in a dictionary file
 """
-import sys
-from load_dictionary import load 
+import load_dictionary as ld
+import sys 
 
-wordList = load('./dictionary.txt')
-paliList = []
-# finding out if a word in the list is a palindrome
-for word in wordList:
-    word = word.strip()
-    wordLen = len(word)
-    if len(word) > 1 and word == word[::-1]:  # same forwards as it is backwards
-        paliList += word
-        print("Palindrome found: {}".format(word))
-print("Number of Palindromes found: {}".format(len(paliList)))
-input("Press enter to exit the program")
-        
+wordList = ld.load('./dictionary.txt')
+
+# find word-pair palingrams
+
+def findPalingrams():
+    """
+    Find dictionary palingrams
+    """
+    paliList = []
+    words = set(wordList) # converting this list into a set will speed up runtime significantly
+    for word in words:
+        end = len(word)
+        revWord = word[::-1]
+        if end > 1:
+            for i in range(end):
+                if word[i:] == revWord[:end-i] and revWord[end-i:] in words:
+                    paliList.append((word,revWord[end-i:]))
+                if word[:i] == revWord[end-i:] and revWord[:end-i] in words:
+                    paliList.append((revWord[:end-i],word))
+    return paliList 
+
+palingrams = findPalingrams()
+
+# sort the palingrams alphabetically
+
+palingrams = sorted(palingrams)
+print("We have found {} Palingrams\n".format(len(palingrams)))
+for first, second in palingrams:
+    print(first,second)
+input("\nPress enter to exit the program \n")
