@@ -1,6 +1,6 @@
 
 # Impractical Python Projects
-As a part of learning python, It's important to make lots of projects myself no matter how small or impractical. This repository contains all the project work I have done when working through the book *Impractical Python* by Lee Vaughan. I never intended on finishing the book, so I have just done enough projects to gain more experience with mini projects and I can move on to further learning and projects outside of this book.
+As a part of learning python, It's important to make lots of projects no matter how small or seemingly impractical. This repository contains all the project work I have done when working through the book *Impractical Python* by Lee Vaughan. I never intended on finishing the book, so I have just done enough projects to gain more experience with mini projects and I can move on to further learning and projects outside of this book.
 
 ![Impractical Python Projects Book by Lee Vaughan](https://github.com/BrosephB/Impractical-Python-Projects/blob/main/Readme/IPJ.jpg?raw=true)
 
